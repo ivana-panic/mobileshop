@@ -18,14 +18,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       rel="stylesheet"
       type="text/css"
     />
+    
     <link rel="stylesheet" href="css/responsiveslides.css" />
     <script src="js/jquery.min.js"></script>
     <script src="js/responsiveslides.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/slider.js"></script>
-  </head>
+    
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script src="js/slider.js"></script>
+</head>
   <body>
     <div class="clear"></div>
+    
     <div class="top-header">
       <div class="wrap">
         <!----start-logo---->
@@ -43,62 +58,94 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!----End-top-nav---->
     <!----End-Header---->
     <!--start-image-slider---->
-    <div class="wrap">
-      <div class="image-slider">
-        <!-- Slideshow 1 -->
-        <ul class="rslides" id="slider1">
-          <li><img src="images/header1.png" alt="" /></li>
-          <li><img src="images/header2.png" alt="" /></li>
-          <li><img src="images/header1.png" alt="" /></li>
-        </ul>
-        <!-- Slideshow 2 -->
-      </div>
+  <!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <img src="images/mobile-huawei.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="images/mobile-hand.jpg" style="width:100%"> 
+  </div>
+
+  <div class="mySlides fade">
+    <img src="images/mobile-black.jpg" style="width:100%">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+     
       <!--End-image-slider---->
     </div>
     <div class="clear"></div>
+    <div class="row" id="top3Title">
+      <div class="col-md-12">
+        <h1 class="display-3" id="titletop3">Top 3 phone</h1>
+      </div>
+    </div>
     <div class="wrap">
       <div class="content">
         <div class="top-3-grids">
           <div class="section group">
-            <div class="grid_1_of_3 images_1_of_3">
-              <a href="single.html"><img src="images/grid-img1.jpg" /></a>
-              <h3>Lorem Ipsum is simply dummy text</h3>
+           <div class="grid_1_of_3 images_1_of_3" id="box3">
+             
+            </div>  
+          
+        
+           <!-- <div class="grid_1_of_3 images_1_of_3 second" id="div2top3">
+            
             </div>
-            <div class="grid_1_of_3 images_1_of_3 second">
-              <a href="single.html"><img src="images/grid-img2.jpg" /></a>
-              <h3>Lorem Ipsum is simply dummy text</h3>
-            </div>
-            <div class="grid_1_of_3 images_1_of_3 theree">
-              <a href="single.html"><img src="images/grid-img3.jpg" /></a>
-              <h3>Lorem Ipsum is simply dummy text</h3>
-            </div>
+            <div class="grid_1_of_3 images_1_of_3 theree" id="div3top3">
+           
+            </div>   --> 
           </div>
+            
+          
+          
         </div>
 
+        
+          
+            <div class="input-group" style="width: 50%;">
+              <input type="text" class="form-control" placeholder="Search" />
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-success" id="buttonSearch">Search</button>
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </div>
+            </div>
+         
+         
+      
+
+        <div class="row">
+          <div class="col-ld-12" id="price-filter">
+            <select class="form-control form-control-lg" id="sort">
+              <option value="asc" selected>Low to high</option>
+              <option value="desc">High to low</option>
+              
+            </select>
+        </div>
+        </div>        
+       
+
         <div class="content-grids" id="content"></div>
+
         <div class="content-sidebar">
           <h4>Categories</h4>
-          <ul>
-            <li><a href="#">Accord Mobiles</a></li>
-            <li><a href="#">Ace Mobile</a></li>
-            <li><a href="#">Acer Mobile</a></li>
-            <li><a href="#">Airfone</a></li>
-            <li><a href="#">Apple</a></li>
-            <li><a href="#">Blackberry</a></li>
-            <li><a href="#">Byond Tech</a></li>
-            <li><a href="#">Celkon Mobiles</a></li>
-            <li><a href="#">Dell Mobile Phones </a></li>
-            <li><a href="#">Fly Mobile</a></li>
-            <li><a href="#">Fujezone Mobiles </a></li>
-            <li><a href="#">HTC</a></li>
-            <li><a href="#">LG Mobiles</a></li>
-            <li><a href="#">Longtel Mobile</a></li>
-            <li><a href="#">Maxx</a></li>
-            <li><a href="#">Micromax Mobiles </a></li>
-            <li><a href="#">Samsung Mobiles</a></li>
-            <li><a href="#">Sony Ericsson Mobiles</a></li>
-            <li><a href="#">Wynncom Mobiles</a></li>
-          </ul>
+          <ul class="mark-list"></ul>
         </div>
       </div>
       <div class="clear"></div>
@@ -106,47 +153,35 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="footer">
       <div class="wrap">
         <div class="section group">
-          <div class="col_1_of_4 span_1_of_4">
+          <div class="col_1_of_4 span_1_of_4" id="footer-our-info">
             <h3>Our Info</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur.
+            <p id="textp">
+              We are a store that sells the best phones on the market. We have the best prices and satisfied customers
             </p>
           </div>
           <div class="col_1_of_4 span_1_of_4">
             <h3>Latest-News</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p id="textp">From next month, the latest models of Iphone phones will be in our store</p>
+            <p id="textp">Only today 30% discount on all Samsung phones</p>
+            <p id="textp">The oldest phone model only with us</p>
           </div>
           <div class="col_1_of_4 span_1_of_4">
             <h3>Store Location</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p id="textp">1535 Broadway Ste 0161A, New York, NY, 10036
+
+            </p>
             <h3>Order-online</h3>
-            <p>080-1234-56789</p>
-            <p>080-1234-56780</p>
+            <p id="textp">080-1234-56789</p>
+            <p id="textp">080-1234-56780</p>
           </div>
           <div class="col_1_of_4 span_1_of_4 footer-lastgrid">
             <h3>News-Letter</h3>
             <form><input type="text" /><input type="submit" value="go" /></form>
-            <h3>Follow Us:</h3>
-            <ul>
-              <li>
-                <a href="#"
-                  ><img src="images/twitter.png" title="twitter" />Twitter</a
-                >
-              </li>
-              <li>
-                <a href="#"
-                  ><img src="images/facebook.png" title="Facebook" />Facebook</a
-                >
-              </li>
-              <li>
-                <a href="#"><img src="images/rss.png" title="Rss" />Rss</a>
-              </li>
+            <ul class="footer_links">
+              <li><a href="#" id="footer-sitemap">Sitemap</a></li>
+              <li><a href="#" id="footer-contact">DOCUMENTATION</a></li>
             </ul>
+           
           </div>
         </div>
       </div>
@@ -160,6 +195,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           </p>
         </div>
       </div>
+      <a href="#" id="back-to-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
     </div>
+   
+    <script src="js/main.js"></script>
+    
   </body>
 </html>
