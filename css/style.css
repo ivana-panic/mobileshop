@@ -241,7 +241,7 @@ body {
 }
 /*---top-header----*/
 .top-header {
-  background: #94cb32;
+  background: #cfb53b;
   padding: 12px 0px;
 }
 .logo {
@@ -300,7 +300,7 @@ body {
 .images_1_of_3 {
   width: 33%;
   padding: 0px 0 1.1% 0;
-  background: #92ac05;
+  background: #cfb53b;
   text-align: center;
   box-shadow: 0px 3px 10px rgb(233, 233, 233);
 }
@@ -1775,6 +1775,7 @@ body {
 #sectionAbouthMe {
   width: 100%;
   text-align: center;
+  padding-top: 20px;
 }
 #sectionAbouthMeText {
   width: 100%;
@@ -1923,7 +1924,7 @@ p {
 }
 .back-to-top {
   position: fixed;
-  background-color: green;
+  background-color: #cfb53b;
   width: 44px;
   height: 44px;
   text-align: center;
@@ -1941,7 +1942,7 @@ p {
   margin-top: 10px;
 }
 #cart-box {
-  background-color: green;
+  background-color: #f4c430;
 }
 #cart-icon {
   float: right;
@@ -1951,7 +1952,15 @@ p {
 #clickCart {
   width: 100%;
   font-size: 15px;
-  background-color: black;
+  background-color: #cfb53b;
   color: white;
   cursor: pointer;
+}
+.list-mark-pointer {
+  cursor: pointer;
+}
+#result {
+  margin-right: 10px;
+  float: right;
+  color: black;
 }

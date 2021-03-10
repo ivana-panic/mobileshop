@@ -42,6 +42,7 @@ window.onload = () => {
       const a = document.createElement("a");
       const text = document.createTextNode(item.text);
       a.classList.add(item.text);
+      li.classList.add("list-mark-pointer");
       a.appendChild(text);
       li.appendChild(a);
       ul.appendChild(li);
@@ -77,6 +78,7 @@ window.onload = () => {
       const p = document.createElement("p");
       const text = document.createTextNode(item.text);
 
+      div.classList.add("top-1-of-3");
       p.appendChild(text);
       img.setAttribute("src", item.url);
       div.appendChild(img);
@@ -116,9 +118,6 @@ window.onload = () => {
 
       generateMobilePhonesContent(filteredMobilePhones);
     }
-    /*     const categories = allData.filter((item) => {
-      return item.mark === clickedText;
-    }); */
   }
 
   const markList = document.querySelector("#category");
@@ -129,12 +128,9 @@ window.onload = () => {
     });
   }
 
-  //dynamic phone printing
+  //DYNAMIC PHONE PRINT
 
   function generateMobilePhonesContent(AllJsonData) {
-    /*       const categories = AllJsonData.filter((item)=> {
-          return item.mark === clickedText
-      }) */
     let html = "";
     for (let item of AllJsonData) {
       html += `<div class="grid_1_of_4 images_1_of_4 products-info">
@@ -156,7 +152,7 @@ window.onload = () => {
     document.querySelector("#content").innerHTML = html;
   }
 
-  //sort price
+  //SORT PRICE
 
   function sort() {
     const sortType = document.getElementById("sort").value;
@@ -296,15 +292,21 @@ window.onload = () => {
     });
   });
 
-  //LOCAL STORAGE
-
   if (localStorage) {
     $("#go-button").click(function () {
       var mail = $("#footer-regex").val();
       localStorage.setItem("mail-korisnik", mail);
-      alert("Uneti mail je snimljen na Local Storage! Ocekujte poruku!");
+      alert("The entered mail was saved on Local Storage! Expect a message!");
     });
   } else {
     alert("Error! ");
   }
+
+  //SHOPPING CART
+
+  document
+    .querySelector("#cart-icon")
+    .addEventListener("click", function clictShopCart() {
+      alert("Thanks for shopping, see you!");
+    });
 };
