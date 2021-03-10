@@ -246,10 +246,11 @@ window.onload = () => {
     document.body.scrollTop = 0; // safari
     document.documentElement.scrollTop = 0; // mozilla abd chrome
   });
-  document.addEventListener("DOMContentLoaded", () => {
-    document
-      .querySelector("#clickCart")
-      .addEventListener("click", function cart() {
+
+  document
+    .querySelector("#content")
+    .addEventListener("click", function cart(event) {
+      if (event.target.id === "clickCart") {
         if (typeof Storage !== "undefined") {
           if (sessionStorage.clickcount) {
             sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
@@ -262,8 +263,8 @@ window.onload = () => {
           document.getElementById("result").innerHTML =
             "Ovaj pregledač nema local storage";
         }
-      });
-  });
+      }
+    });
 
   //FOOTER REGEX
   document.addEventListener("DOMContentLoaded", () => {
