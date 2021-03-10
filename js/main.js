@@ -28,7 +28,7 @@ window.onload = () => {
     { text: "Huawei" },
     { text: "Xiaomi" },
     { text: "Nokia" },
-    { text: "Motorola Moto" },
+    { text: "Motorola" },
     { text: "Alcatel" },
   ];
 
@@ -41,7 +41,7 @@ window.onload = () => {
       const li = document.createElement("li");
       const a = document.createElement("a");
       const text = document.createTextNode(item.text);
-      a.setAttribute("href", item.url);
+      a.classList.add(item.text);
       a.appendChild(text);
       li.appendChild(a);
       ul.appendChild(li);
@@ -72,14 +72,16 @@ window.onload = () => {
     //create children element
 
     for (let item of top3Text) {
+      const div = document.createElement("div");
       const img = document.createElement("img");
       const p = document.createElement("p");
       const text = document.createTextNode(item.text);
 
       p.appendChild(text);
       img.setAttribute("src", item.url);
-      top3div.appendChild(img);
-      top3div.appendChild(p);
+      div.appendChild(img);
+      div.appendChild(p);
+      top3div.appendChild(div);
     }
   };
 
@@ -92,6 +94,7 @@ window.onload = () => {
       dataType: "json",
       success: function (results) {
         callback(results);
+        localStorage.setItem("mobile", JSON.stringify(results));
       },
       error: function (err) {
         console.log(err);
@@ -101,9 +104,28 @@ window.onload = () => {
 
   //click on mark and show phone
 
-  function clickMark(allData) {
-    const categories = allData.filter((item) => {
+  function clickMark(event) {
+    console.log(event);
+    if (event.target.tagName === "A") {
+      const text = event.target.classList.value;
+      const mobilePhones = JSON.parse(localStorage.mobile);
+
+      const filteredMobilePhones = mobilePhones.filter((item) => {
+        return item.mark === text;
+      });
+
+      generateMobilePhonesContent(filteredMobilePhones);
+    }
+    /*     const categories = allData.filter((item) => {
       return item.mark === clickedText;
+    }); */
+  }
+
+  const markList = document.querySelector("#category");
+
+  if (markList) {
+    markList.addEventListener("click", (event) => {
+      clickMark(event);
     });
   }
 
@@ -136,18 +158,27 @@ window.onload = () => {
 
   //sort price
 
-  function data() {
+  function sort() {
     const sortType = document.getElementById("sort").value;
+    const mobilePhones = JSON.parse(localStorage.mobile);
+
     if (sortType == "asc") {
-      return data.sort((a, b) => (a.price > b.price ? 1 : -1));
+      return mobilePhones.sort((a, b) => (a.price > b.price ? 1 : -1));
     }
-    return data.sort((a, b) => (a.price < b.price ? 1 : -1));
+    if (sortType == "desc") {
+      return mobilePhones.sort((a, b) => (a.price < b.price ? 1 : -1));
+    }
+    return mobilePhones;
   }
+
+  document.getElementById("sort").addEventListener("change", () => {
+    generateMobilePhonesContent(sort());
+  });
 
   //input search phone
 
   const apiSearchBaseUrl = (searchTerm) => {
-    return `https://polar-thicket-29502.herokuapp.com/mobile${searchTerm}`;
+    return `https://polar-thicket-29502.herokuapp.com/search?name=${searchTerm}`;
   };
 
   const getSearchResults = async (searchTerm) => {
@@ -160,24 +191,7 @@ window.onload = () => {
   const getPhone = (input) => {
     if (input.length > 1) {
       getSearchResults(input).then((data) => {
-        const filterOutNonCover = data.docs.filter((ele) => {
-          return ele.cover_i;
-        });
-
-        const topResults = filterOutNonCover.slice(0, 12);
-        suggestedPhone = [];
-        const finalResult = topResults.map((ele) => {
-          return genereatePhoneItem(
-            ele.title,
-            `https://polar-thicket-29502.herokuapp.com/mobile`
-          );
-        });
-
-        suggestedPhone.push(...finalResult);
-        searchJquery.empty();
-        $.each(suggestedPhone, function (i, val) {
-          searchJquery.append(val);
-        });
+        generateMobilePhonesContent(data);
       });
     }
   };
@@ -187,9 +201,11 @@ window.onload = () => {
   const search = document.querySelector("#searchinput");
   const searchButton = document.querySelector("#buttonSearch");
 
-  searchButton.addEventListener("click", () => {
-    getPhone(search.value);
-  });
+  if (searchButton) {
+    searchButton.addEventListener("click", () => {
+      getPhone(search.value);
+    });
+  }
 
   //Initialise page
   generateLinks();
