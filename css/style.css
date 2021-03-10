@@ -1892,10 +1892,8 @@ p {
   font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond,
     "Times New Roman", serif;
   font-size: 17px;
-
-#textp {
-  font-size: 15px;
 }
+
 .footer_links {
   margin: 0px;
   padding: 0px;
@@ -1924,9 +1922,9 @@ p {
   font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua",
     Georgia, serif;
 }
-#back-to-top{
+.back-to-top {
   position: fixed;
-  background-color: red;
+  background-color: green;
   width: 44px;
   height: 44px;
   text-align: center;
@@ -1935,5 +1933,25 @@ p {
   bottom: 15px;
   transition: background 0.5s;
   z-index: 9;
-  
+}
+.errors {
+  color: red;
+}
+#favicon {
+  color: white;
+  margin-top: 10px;
+}
+#cart-box {
+  background-color: green;
+}
+#cart-icon {
+  float: right;
+  font-size: 30px;
+  margin-right: 30px;
+}
+#clickCart {
+  width: 100%;
+  font-size: 15px;
+  background-color: black;
+  color: white;
 }

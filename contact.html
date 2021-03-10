@@ -66,7 +66,49 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>				
 				<div class="col span_2_of_3">
 				  <div class="contact-form">
-				  	<h2>Contact Us</h2>
+				  	
+					  <form method="post" id="cnt_form">
+						<h3>Contact Us</h3>
+						<div class="row">
+						  <div class="col-md-6">
+							<div class="form-group">
+							  <input type="text" name="name" class="form-control" id="form-name" placeholder="Your Name " value="" />
+							</div>
+							<div class="form-group">
+							  <input type="text" name="txtEmail" class="form-control" id="form-email" placeholder="Your Email "
+								value="" />
+							</div>
+							<div class="form-group">
+							  <input type="text" name="txtPhone" class="form-control" id="form-phone" placeholder="Your Phone Number "
+								value="" />
+							</div>
+						  </div>
+						  <div class="col-md-6">
+							<div class="form-group">
+							  <textarea name="txtMsg" class="form-control" id="form-text" placeholder="Your Message *"
+								style="width: 100%; height: 132px;"></textarea>
+							</div>
+							
+						  </div>
+						  <div id="gender">
+							<p >Please select your gender:</p>
+							  <input type="radio" id="male" name="gender" value="male">
+							  <label for="male">Male</label><br>
+							  <input type="radio" id="female" name="gender" value="female">
+							  <label for="female">Female</label><br>
+
+						</div>
+						  <div class="col-md-6">
+							<div class="form-group">
+							  <input type="submit" name="btnSubmit" class="btnContact" id="submit" value="Send Message" />
+							</div>
+						  </div>
+						  <div id="errors" class="col-md-12 errors">
+				
+						  </div>
+						</div>
+					  </form>
+					  <!--  
 					    <form>
 					    	<div>
 						    	<span><label>NAME</label></span>
@@ -97,9 +139,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
  
 							</div>
 						   <div>
-						   		<span><input type="submit" value="Send" id="send-button"></span>
+						   		<input type="submit" name="btnSubmit" class="btnContact" id="submit" value="Send Message" />
 						  </div>
+						  <div id="errors" class="col-md-12 errors">
+
+						</div>
 					    </form>
+					-->
+						
 				    </div>
   				</div>				
 			  </div>

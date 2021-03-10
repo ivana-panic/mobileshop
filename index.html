@@ -20,9 +20,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     />
     
     <link rel="stylesheet" href="css/responsiveslides.css" />
+    
     <script src="js/jquery.min.js"></script>
     <script src="js/responsiveslides.min.js"></script>
-    
+
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+
+
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -104,28 +108,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>  
           
         
-           <!-- <div class="grid_1_of_3 images_1_of_3 second" id="div2top3">
-            
-            </div>
-            <div class="grid_1_of_3 images_1_of_3 theree" id="div3top3">
            
-            </div>   --> 
           </div>
             
           
           
         </div>
+        <div class="row">
+          <div class="col-md-12" id="cart-box">
+            <span class="fa fa-shopping-basket" id="cart-icon" style="color:white;"></span>
+            <div id="result" style="color:#ff2895;font-weight:bold;"></div>
+          </div>
+
+        </div>
+        
 
         
           
             <div class="input-group" style="width: 50%;">
-              <input type="text" class="form-control" placeholder="Search" />
+              <input type="text" class="form-control" placeholder="Search" id="searchinput" />
               <div class="input-group-btn">
                 <button type="button" class="btn btn-success" id="buttonSearch">Search</button>
                   <i class="glyphicon glyphicon-search"></i>
                 </button>
               </div>
+              
             </div>
+           
          
          
       
@@ -139,9 +148,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </select>
         </div>
         </div>        
-       
+   
 
-        <div class="content-grids" id="content"></div>
+        <div class="content-grids" id="content">
+         
+        </div>
 
         <div class="content-sidebar">
           <h4>Categories</h4>
@@ -176,8 +187,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           </div>
           <div class="col_1_of_4 span_1_of_4 footer-lastgrid">
             <h3>News-Letter</h3>
-            <form><input type="text" /><input type="submit" value="go" /></form>
+            <form><input type="text" id="footer-regex" /><input type="submit" value="go" id="go-button" /></form>
             <ul class="footer_links">
+              <div id="errors" class="col-md-12 errors">
+				
+						  </div>
               <li><a href="#" id="footer-sitemap">Sitemap</a></li>
               <li><a href="#" id="footer-contact">DOCUMENTATION</a></li>
             </ul>
@@ -195,8 +209,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           </p>
         </div>
       </div>
-      <a href="#" id="back-to-top">
-        <i class="fa fa-chevron-up"></i>
+      <a href="#" class="back-to-top">
+        <i class="fa fa-chevron-circle-up" aria-hidden="true" id="favicon"></i>
     </a>
     </div>
    
