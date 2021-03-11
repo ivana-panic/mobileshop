@@ -2,7 +2,7 @@ window.onload = () => {
   //add to BE
   const navLinks = [
     { url: "index.html", text: "Home" },
-    { url: "about.html", text: "Author" },
+    { url: "author.html", text: "Author" },
     { url: "contact.html", text: "contact" },
   ];
 
@@ -66,7 +66,7 @@ window.onload = () => {
         "Founded back in 1969 as Samsung Electric Industries, Suwon, South Korea-headquartered Samsung Electronics",
     },
   ];
-  //dinamic print top 3 phones
+  //DYNAMIC PRINT TOP 3 PHONE
   const generateTop3content = () => {
     //get parent element
     const top3div = document.querySelector(".grid_1_of_3");
@@ -87,7 +87,7 @@ window.onload = () => {
     }
   };
 
-  //call ajax
+  //CALL AJAX
 
   function fetchData(url, method, callback) {
     $.ajax({
@@ -104,7 +104,7 @@ window.onload = () => {
     });
   }
 
-  //click on mark and show phone
+  //CLICK ON MARK AND SHOW PHONE
 
   function clickMark(event) {
     console.log(event);
@@ -171,7 +171,7 @@ window.onload = () => {
     generateMobilePhonesContent(sort());
   });
 
-  //input search phone
+  //INPU AND SEARCH PHONE
 
   const apiSearchBaseUrl = (searchTerm) => {
     return `https://polar-thicket-29502.herokuapp.com/search?name=${searchTerm}`;
@@ -192,8 +192,6 @@ window.onload = () => {
     }
   };
 
-  let suggestedPhone = [];
-  const searchJquery = $("#content");
   const search = document.querySelector("#searchinput");
   const searchButton = document.querySelector("#buttonSearch");
 
@@ -203,7 +201,7 @@ window.onload = () => {
     });
   }
 
-  //Initialise page
+  //INITIALISE PAGE
   generateLinks();
   generateMarkMenu();
   generateTop3content();
@@ -213,7 +211,7 @@ window.onload = () => {
     generateMobilePhonesContent
   );
 
-  //slider
+  //SLIDER
   var slideIndex = 0;
   showSlides();
 
@@ -242,6 +240,8 @@ window.onload = () => {
     document.body.scrollTop = 0; // safari
     document.documentElement.scrollTop = 0; // mozilla abd chrome
   });
+
+  //ADD TO CART
 
   document
     .querySelector("#content")
